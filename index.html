@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap w/ Vite</title>
+    <script type="module" src="./js/main.js"></script>
+    <link href="styles.scss" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand me-auto" id="logo-btn" href="#">Logo</a>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a href="#" class="login-button" id="login-btn">Login</a>
+        <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+        <h1 id="main-h1">responsive web design</h1>
+        <h2 id="main-h2">with bootstrp 5</h2>
+      </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <!-- Login Box -->
+    <div class="wrapper">
+      <div class="login-container main">
+        <div class="row">
+          <div class="col-md-6 side-image"></div>
+          <div class="col-md-6 right">
+            <div class="input-box">
+              <header>Create account</header>
+              <div class="input-field">
+                <input type="text" class="input" id="email" required autocompelet="off" />
+                <label for="email">Email</label>
+              </div>
+              <div class="input-field">
+                <input type="password" class="input" id="password" required />
+                <label for="password">Password</label>
+              </div>
+              <div class="input-field">
+                <input type="submit" class="submit" value="Sign Up" />
+              </div>
+              <div class="signin">
+                <span>Already have an account? <a href="#">Login here</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Login Box -->
+  </body>
+</html>

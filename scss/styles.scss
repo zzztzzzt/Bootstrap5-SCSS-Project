@@ -1,0 +1,170 @@
+@use "login-box-styles";
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Smooch&display=swap');
+
+body {
+    overflow: hidden;
+}
+
+.navbar {
+    background-color: #fff;
+    border-radius: 18px;
+    height: 80px;
+    margin: 20px;
+    padding: 0.5rem;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+    color: #0084b8;
+    transition: 0.3s color;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+.animate-border-style {
+    content: '';
+    background-image: conic-gradient(from var(--angle), transparent 75%, #4ac3ff, #4ff3ff, #82b2ff);
+    border-radius: 2px;
+    display: inline-block;
+    position: absolute;
+    width: 110%;
+    height: 115%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    animation: 3s spin linear infinite;
+}
+.login-button {
+    background: #ffffff;
+    color: #9c9c9c;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 3px;
+    margin: 0;
+    padding: 8px 20px;
+    text-align: center;
+    position: relative;
+    transition: 0.3s background;
+
+    &::after {
+        @extend .animate-border-style;
+    }
+
+    &::before {
+        @extend .animate-border-style;
+        filter: blur(0.1rem);
+        opacity: 0.6;
+    }
+
+    &:hover {
+        background: #c9e6ff;
+        color: #ffffff;
+    }
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #0084b8;
+    font-weight: bold;
+    position: relative;
+
+    &:hover {
+        color: #000;
+    }
+
+    .active {
+        color: #000;
+    }
+}
+
+.hero-section {
+    background: url("hero-section-bg.jpg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+
+    &::before {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.42);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .container {
+        height: 100vh;
+        position: relative;
+        z-index: 1;
+
+        h1 {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            font-size: 3.5em;
+            letter-spacing: 6px;
+            font-family: "Ballet", cursive;
+            font-optical-sizing: auto;
+            font-weight: 900;
+            font-style: normal;
+            transition: 0.9s;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-family: "Ballet", cursive;
+            font-optical-sizing: auto;
+            font-weight: 900;
+            font-style: normal;
+            transition: 0.9s;
+        }
+    }
+}
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        visibility: hidden;
+        content: "";
+        background-color: #c9e6ff;
+        width: 0;
+        height: 3.6px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+        visibility: visible;
+        width: 100%;
+    }
+}
